@@ -1,20 +1,20 @@
+// Imports
 import Head from "next/head";
 import Image from "next/image";
 import { FormEvent, useState } from "react";
-import { signIn, signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 // Components
-
 import { Footer } from "@/components/Footer";
 import { Input } from '../../components/Login/Input';
 import { Button } from '../../components/Login/Button';
-
 
 // CSS
 import styles from './login.module.css';
 
 // Image
 import GoogleImg from '../../assets/images/Google.png';
+
 
 
 export default function Login(){
@@ -28,14 +28,12 @@ export default function Login(){
 
         // Tratamento dos dados
         //  ...
-
         const obj = {
             user: user,
             password: password
         }
         console.log(obj)
-        setUser("")
-        setPassword("")
+        
     }
 
 
@@ -54,7 +52,7 @@ export default function Login(){
                 md:w-96">
                     <h1 className="font-sora font-semibold text-4xl mb-10">Login</h1>
                     <form
-                    onClick={(e) => handleSubmit(e)} 
+                    onSubmit={(e) => handleSubmit(e)} 
                     className="w-full flex flex-col gap-y-4">
                         <Input 
                         type="text"
@@ -79,7 +77,8 @@ export default function Login(){
 
                     {/* Button Google */}
                     <button
-                        className="w-full flex justify-center items-center bg-transparent rounded-md p-3 border border-solid border-blue-600
+                    onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+                    className="w-full flex justify-center items-center bg-transparent rounded-md p-3 border border-solid border-blue-600
                     font-sora font-semibold transition-all text-sm gap-3
                     focus:bg-white focus:text-black focus:outline-0 focus:border-0
                     hover:bg-white hover:text-black hover:outline-0 hover:border-0
