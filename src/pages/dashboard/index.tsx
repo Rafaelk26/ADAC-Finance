@@ -8,8 +8,12 @@ import Image from "next/image";
 import { getAllEntry } from '@/functions/Entry/getAllEntry'
 import { getAllCategories } from '@/functions/Category/getAllCategories'
 
+// Components
+import { Header } from '@/components/Header'
 
-export default function Dashboard(){
+
+
+export default function Dashboard({ dataUser }: {dataUser: string}){
 
     return(
 
@@ -17,6 +21,11 @@ export default function Dashboard(){
             <Head>
                 <title>ADAC Finance | Dashboard</title>
             </Head>
+
+            <Header 
+            name="Dashboard"
+            photo={dataUser}
+            />
 
             <div>
                 <h1 className="font-sora text-2xl">PÁGINA DE DASHBOARD</h1>
@@ -26,6 +35,7 @@ export default function Dashboard(){
         </>
     )
 }
+
 
 // Conferir session usando getServerSideProps
 
@@ -41,16 +51,13 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
         };
     }
 
-    // Função que resgata os dados do back-end
+    // Funções que resgatam os dados do back-end
     const data = await getAllEntry();
     const dataCategory = await getAllCategories();
-
-    if (data) {
-        console.log(data);
-        console.log(dataCategory);
-    }
+    
+    const dataUser = session?.user?.image;
 
     return {
-        props: { data, dataCategory },
+        props: { data, dataCategory, dataUser },
     };
 };
