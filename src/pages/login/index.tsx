@@ -13,7 +13,7 @@ import { Button } from '../../components/Login/Button';
 import styles from './login.module.css';
 
 // Image
-import GoogleImg from '../../assets/images/Google.png';
+import GoogleImg from '../../../public/Google.png';
 
 
 
@@ -41,6 +41,7 @@ export default function Login(){
         <>
             <Head>
                 <title>ADAC Finance | Login</title>
+                <link rel="icon" href="/ADAC LOGO-White.png" />
             </Head>
             
             {/* Background Image */}

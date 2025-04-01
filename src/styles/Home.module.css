@@ -4,6 +4,23 @@
     overflow: hidden;
 }
 
+.videoBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 /* LG */
 @media (min-width: 1080px) {
     .backgroundImage {
@@ -12,7 +29,7 @@
         right: -20%;
         width: 70vw;
         height: 100%;
-        background-image: url("../assets/images/ADAC LOGO-White.png");
+        background-image: url("../../public/ADAC\ LOGO-White.png");
         background-position: right;
         background-repeat: no-repeat;
         background-size: contain;
@@ -30,7 +47,7 @@
         right: -20%;
         width: 70vw;
         height: 100%;
-        background-image: url("../assets/images/ADAC LOGO-White.png");
+        background-image: url("../../public/ADAC\ LOGO-White.png");
         background-position: right;
         background-repeat: no-repeat;
         background-size: contain;
@@ -48,7 +65,7 @@
         right: 0%;
         width: 100vw;
         height: 100%;
-        background-image: url("../assets/images/ADAC LOGO-White.png");
+        background-image: url("../../public/ADAC\ LOGO-White.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 110%;
