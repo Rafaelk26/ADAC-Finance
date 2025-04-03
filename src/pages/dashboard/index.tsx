@@ -11,6 +11,7 @@ import { getAllCategories } from '@/functions/Category/getAllCategories'
 // Components
 import { Header } from '@/components/Header'
 import { Nav } from '@/components/Nav'
+import { CardDash } from '@/components/CardDash'
 
 // Images
 import logoEntry from '../../../public/logoEntry.png'
@@ -52,58 +53,52 @@ export default function Dashboard({ dataUserPhoto }: { dataUserPhoto: string}){
                         <div className="w-full flex justify-between">
 
                             {/* Card Entry */}
-                            <div className="w-[22rem] border border-solid border-s-4 border-white bg-green-500 bg-opacity-10 rounded-md py-2">
-                                {/* Icon more Sub-title */}
-                                <div className="w-full px-6 flex justify-between items-center">
-                                    <span className="font-sora font-thin text-lg">Total de</span>
-                                    <Image className="w-12" src={logoEntry} alt="Logo Entrada" />
-                                </div>
-                                {/* Title */}
-                                <div className="w-full px-6">
-                                    <span className="font-sora font-semibold text-3xl">Receitas Mensais</span>
-                                    <hr className="mt-1" />
-                                </div>
-                                {/* Value */}
-                                <div className="w-full px-6 mt-2">
-                                    <span className="font-sora font-semibold text-3xl">R$ 0,00</span>
-                                </div>
-                            </div>
+                            <CardDash 
+                            name="Entradas Mensais"
+                            photo={logoEntry}
+                            value={"R$ 0,00"}
+                            color="green"
+                            />
 
                             {/* Card Output */}
-                            <div className="w-[22rem] border border-solid border-s-4 border-white bg-red-500 bg-opacity-10 rounded-md py-2">
-                                {/* Icon more Sub-title */}
-                                <div className="w-full px-6 flex justify-between items-center">
-                                    <span className="font-sora font-thin text-lg">Total de</span>
-                                    <Image className="w-12" src={logoOutput} alt="Logo Entrada" />
-                                </div>
-                                {/* Title */}
-                                <div className="w-full px-6">
-                                    <span className="font-sora font-semibold text-3xl">Despesas Mensais</span>
-                                    <hr className="mt-1" />
-                                </div>
-                                {/* Value */}
-                                <div className="w-full px-6 mt-2">
-                                    <span className="font-sora font-semibold text-3xl">R$ 0,00</span>
-                                </div>
-                            </div>
+                            <CardDash
+                            name="Despesas Mensais"
+                            photo={logoOutput}
+                            value={"R$ 0,00"}
+                            color="red"
+                            />
 
                             {/* Card GrossCash */}
-                            <div className="w-[22rem] border border-solid border-s-4 border-white bg-blue-500 bg-opacity-10 rounded-md py-2">
-                                {/* Icon more Sub-title */}
-                                <div className="w-full px-6 flex justify-between items-center">
-                                    <span className="font-sora font-thin text-lg">Total de</span>
-                                    <Image className="w-10" src={logoGrossCash} alt="Logo Caixa Bruto" />
-                                </div>
-                                {/* Title */}
-                                <div className="w-full px-6">
-                                    <span className="font-sora font-semibold text-3xl">Caixa Bruto</span>
-                                    <hr className="mt-1" />
-                                </div>
-                                {/* Value */}
-                                <div className="w-full px-6 mt-2">
-                                    <span className="font-sora font-semibold text-3xl">R$ 0,00</span>
-                                </div>
-                            </div>
+                            <CardDash
+                            name="Caixa Bruto"
+                            photo={logoGrossCash}
+                            value={"R$ 0,00"}
+                            color="blue"
+                            />
+                        </div>
+                    </section>
+
+                    {/* Info's */}
+
+                    <section className="mt-10 flex outline outline-yellow-300">
+                        
+                        {/* Graphic 1 */}
+
+                        <div className="w-[65%] outline outline-blue-400">
+                            <h1>teste</h1>
+                            <h1>teste</h1>
+                            <h1>teste</h1>
+                            <h1>teste</h1>
+                            <h1>https://echarts.apache.org/examples/en/editor.html?c=bar1&lang=ts</h1>
+                        </div>
+
+                        {/* Last Registers */}
+
+                        <div className="w-[36%] outline outline-green-400">
+                            <h1>teste</h1>
+                            <h1>teste</h1>
+                            <h1>teste</h1>
+                            <h1>teste</h1>
                         </div>
                     </section>
                 </div>
@@ -114,7 +109,6 @@ export default function Dashboard({ dataUserPhoto }: { dataUserPhoto: string}){
         </>
     )
 }
-
 
 // Conferir session usando getServerSideProps
 
