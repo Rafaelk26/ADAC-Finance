@@ -1,10 +1,10 @@
 import Image from "next/image"
 
 // Interafaces
-import { CardDashProps } from '@/interfaces/CardDash'
+import { CardProps } from '@/interfaces/CardProps'
 
 
-export function CardDash({ name, photo, value, color}: CardDashProps){
+export function CardDash({ name, photo, value, color }: CardProps){
     return(
         <>
             <div className={`w-[22rem] border border-solid border-s-4 border-white bg-${color}-500 bg-opacity-10 rounded-md py-2`}>

@@ -22,10 +22,6 @@ import logoOutput from '../../../public/logoOutput.png'
 import logoGrossCash from '../../../public/logoGrossCash.png'
 
 
-// CardDash.tsx
-
-
-
 export default function Dashboard({ dataUserPhoto }: { dataUserPhoto: string}){
 
     return(
@@ -235,6 +231,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     const dataCategory = await getAllCategories();
     
     const dataUserPhoto = session?.user?.image;
+
+    console.log(data)
 
     return {
         props: { data, dataCategory, dataUserPhoto },

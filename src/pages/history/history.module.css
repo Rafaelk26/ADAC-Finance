@@ -1,0 +1,7 @@
+.Date::-webkit-calendar-picker-indicator {
+    filter: invert(1)
+            brightness(100%)
+            sepia(0%)
+            saturate(0%)
+            hue-rotate(180deg)
+}

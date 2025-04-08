@@ -1,8 +1,8 @@
 import { StaticImageData } from "next/dist/shared/lib/get-img-props";
 
-export interface CardDashProps {
+export interface CardProps {
     name: string;
     photo: StaticImageData | string;
     value: React.ReactNode;
-    color: 'green' | 'red' | 'blue';
+    color?: 'green' | 'red' | 'blue';
 }
