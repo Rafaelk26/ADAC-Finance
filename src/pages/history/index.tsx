@@ -1,5 +1,6 @@
-import { FormEvent, useState } from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
+import { FormEvent, useState } from 'react'
 import { BiSearch } from 'react-icons/bi'
 
 // Components
@@ -13,6 +14,9 @@ import { getSession } from 'next-auth/react'
 // CSS
 import styles from './history.module.css'
 
+// Image
+import logoEntry from '../../../public/logoEntry.png'
+import logoOutput from '../../../public/logoOutput.png'
 
 
 
@@ -61,8 +65,9 @@ export default function History({ dataUserPhoto }: { dataUserPhoto: string }) {
 
                     {/* Content */}
 
-                    <section className="max-w-7xl w-full mt-6">
-                        <div className='w-full flex justify-between'>
+                    <section className="max-w-7xl w-full mt-6 flex flex-col gap-8">
+                        {/* Filter */}
+                        <div className='w-full flex justify-between outline outline-yellow-300'>
                             <h1 className='font-sora font-semibold text-3xl'>Registros</h1>
 
 
@@ -80,7 +85,7 @@ export default function History({ dataUserPhoto }: { dataUserPhoto: string }) {
                                         <select
                                         onChange={(e) => setDate(e.target.value)}
                                         className={`w-1/2 bg-black font-sora p-1 outline outline-white outline-1 rounded-md`} >
-                                        <option value="">Categorias</option>
+                                        <option value="">Opções</option>
                                         <option value="All">Todos</option>
                                         <option value="Receitas">Receitas</option>
                                         <option value="Despesas">Despesas</option>
@@ -96,6 +101,59 @@ export default function History({ dataUserPhoto }: { dataUserPhoto: string }) {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Content */}
+                        <section className='w-full px-5 py-7 flex flex-col gap-5 outline outline-green-300'>
+                            {/* Card Register History */}
+                            
+                            
+                            <div className='w-full flex justify-between py-2 px-6 outline outline-1 outline-green-600 rounded-lg'>
+                                {/* Image, name and date */}
+                                <div className='max-w-fit w-full flex gap-4'>
+                                    <div className='max-w-fit w-full flex flex-col justify-center'>
+                                        {/* Image */}
+                                        <Image
+                                            className=''
+                                            src={logoEntry}
+                                            alt={`Entrada ?`} />
+                                    </div>
+                                    {/* Name and date */}
+                                    <div className='max-w-fit w-full flex flex-col'>
+                                        <span className='font-sora text-2xl font-semibold'>Receitas</span>
+                                        <span className='font-sora text-lg font-thin'>01/01/2025</span>
+                                    </div>
+                                </div>
+
+                                {/* Price */}
+                                <div className='max-w-fit w-full flex flex-col justify-center'>
+                                    <span className='font-sora text-2xl font-semibold'>R$ 0,00</span>
+                                </div>
+                            </div>
+
+
+                            <div className='w-full flex justify-between py-2 px-6 outline outline-1 outline-red-600 rounded-lg'>
+                                {/* Image, name and date */}
+                                <div className='max-w-fit w-full flex gap-4'>
+                                    <div className='max-w-fit w-full flex flex-col justify-center'>
+                                        {/* Image */}
+                                        <Image
+                                            className=''
+                                            src={logoOutput}
+                                            alt={`Despesas ?`} />
+                                    </div>
+                                    {/* Name and date */}
+                                    <div className='max-w-fit w-full flex flex-col'>
+                                        <span className='font-sora text-2xl font-semibold'>Despesas</span>
+                                        <span className='font-sora text-lg font-thin'>01/01/2025</span>
+                                    </div>
+                                </div>
+
+                                {/* Price */}
+                                <div className='max-w-fit w-full flex flex-col justify-center'>
+                                    <span className='font-sora text-2xl font-semibold'>R$ 0,00</span>
+                                </div>
+                            </div>
+                        </section>
                     </section>
                     
                 </div>
